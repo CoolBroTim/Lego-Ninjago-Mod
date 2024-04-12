@@ -1,6 +1,7 @@
 package net.coolbrotim.lego_ninjago;
 
 import com.mojang.logging.LogUtils;
+import net.coolbrotim.lego_ninjago.block.ModBlocks;
 import net.coolbrotim.lego_ninjago.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,6 +30,7 @@ public class LegoNinjagoMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -46,6 +48,8 @@ public class LegoNinjagoMod {
             event.accept(ModItems.Tin);
             event.accept(ModItems.Decompressed_Steel);
             event.accept(ModItems.Steel);
+            event.accept(ModBlocks.Tin_Block);
+            event.accept(ModBlocks.Steel_Block);
         }
     }
 
