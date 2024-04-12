@@ -1,6 +1,8 @@
 package net.coolbrotim.lego_ninjago;
 
 import com.mojang.logging.LogUtils;
+import net.coolbrotim.lego_ninjago.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,6 +28,8 @@ public class LegoNinjagoMod {
     public LegoNinjagoMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -36,9 +40,13 @@ public class LegoNinjagoMod {
 
     }
 
-    // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.Raw_Tin);
+            event.accept(ModItems.Tin);
+            event.accept(ModItems.Decompressed_Steel);
+            event.accept(ModItems.Steel);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
