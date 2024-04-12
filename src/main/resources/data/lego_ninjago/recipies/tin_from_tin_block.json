@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "lego_ninjago:tin_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "lego_ninjago:tin"
+
+  }
+}
