@@ -22,7 +22,7 @@ public static final RegistryObject<Block> Tin_Block = registerBlock("tin_block",
         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> Steel_Block = registerBlock("steel_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Block> Steel_Ore = registerBlock("steel_ore",
+    public static final RegistryObject<Block> Tin_Ore = registerBlock("tin_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 
 
